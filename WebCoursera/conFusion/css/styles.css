@@ -35,4 +35,5 @@ body {
 
 .navbar-dark {
     background-color: #512da8;
+    /*background-color: transparent !important;*/
 }
