@@ -37,7 +37,7 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id=loginLink>
                         <span class="fa fa-sign-in"> Login </span>
                 </a>
                 </span>
@@ -51,7 +51,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button id="quitModal" type="button" class="close">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button id="cancelModal" type="button" class="btn btn-secondary btn-sm ml-auto">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
@@ -95,7 +95,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-2 align-self-center text-center">
-                    <a type="button" class="btn btn-warning" data-toggle="modal" data-target="#reservationModal" href="#reservation">Reserve Table</a>
+                    <a id="reservationButtonLink" type="button" class="btn btn-warning">Reserve Table</a>
                     <!--<a type="button" class="btn btn-warning" data-toggle="tooltip" data-html="true" title="Or call us at <br> <strong> +852 12345678 </strong>" data-placement="bottom" href="#FormIndex">Reserve Table</a>-->
                 </div>
             </div>
@@ -108,7 +108,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button id='quitreservationModal' type="button" class="close">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="col-12 col-md-12">
@@ -150,7 +150,7 @@
                             <div class="form-group row " id="FormIndex">
                                 <label for="firstname" class="col-12 col-md-2 col-form-label"> <strong>Section</strong> </label>
                                 <div class="col-12 col-md-10 ">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <div id="loadButtons" class="btn-group btn-group-toggle">
                                         <label class="btn btn-info bg-success  active">
                                             <input type="radio" name="gender" value="hombre" autocomplete="off"> Non-smoking
                                         </label>
@@ -470,37 +470,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <!--<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>-->
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#mycarousel').carousel({
-                interval: 2000
-            });
-            $('#carouselButton').click(function() {
-                if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                    $('#mycarousel').carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                } else {
-                    $('#mycarousel').carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                }
-
-            });
-
-            /*$('#mycarousel').carousel({
-                interval: 2000
-            });
-            $('#carousel-pause').click(function() {
-
-                $('#mycarousel').carousel('pause');
-            });
-            $('#carousel-play').click(function() {
-
-                $('#mycarousel').carousel('cycle');
-            });*/
-        });
-    </script>
+    <script src="JS/scripts.js"></script>
     <!--<script>
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
